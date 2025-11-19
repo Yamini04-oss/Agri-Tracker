@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agri Tracker Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>🌱 Agri Tracker</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Crops</a></li>
+      <li><a href="#">Soil Reports</a></li>
+      <li><a href="#">Weather</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard -->
+  <section class="dashboard">
+
+    <!-- Soil Health Card -->
+    <div class="card">
+      <h2>🧪 Soil Health Check</h2>
+      <form id="soilForm">
+        <label>pH: <input type="number" id="ph" step="0.1" required></label>
+        <label>Nitrogen (N): <input type="number" id="n" required></label>
+        <label>Phosphorus (P): <input type="number" id="p" required></label>
+        <label>Potassium (K): <input type="number" id="k" required></label>
+        <button type="submit">Get Suggestion</button>
+      </form>
+      <p id="soilResult"></p>
+    </div>
+
+    <!-- Crop Suggestions -->
+    <div class="card">
+      <h2>🌾 Crop Suggestions</h2>
+      <ul id="cropList">
+        <li>Enter soil data to see recommendations</li>
+      </ul>
+    </div>
+
+    <!-- Weather -->
+    <div class="card">
+      <h2>☁️ Weather Update</h2>
+      <select id="cityInput">
+        <option value="">Select city</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+      </select>
+      <button id="searchBtn">Check</button>
+      <div id="weatherResult">No data yet</div>
+    </div>
+
+    <!-- Market Price Trends -->
+    <div class="card">
+      <h2>📈 Market Prices</h2>
+      <canvas id="priceChart" width="300" height="200"></canvas>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
